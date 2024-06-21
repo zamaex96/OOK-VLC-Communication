@@ -1,0 +1,35 @@
+/*
+ * 10msDelay_Timer0.c
+ *
+ * Created: 11/29/2018 8:50:20 PM
+ * Author : USN
+ calculate TCNT0 value using formula
+ TCNT0 = 255- CPU FREQ * DELAY/PRESCALER
+		= 255 - 16MHz*10ms/1024
+		= 255 - 16*10^6 hz * 10*10^-3(Sec)/1024
+		= 255 - 156
+		= 99
+ */ 
+
+#include <avr/io.h>
+
+
+void delay()
+{
+	TCCR1B = (1 << CS12) |( 1 << CS10);
+	TCNT0 = 99;
+	while((TIFR&(1<<TOV0))==0);
+	TIFR = (1<<TOV0);
+}
+
+int main(void)
+{
+    /* Replace with your application code */
+    while (1) 
+    {
+		PORTA = 0xFF;
+		delay();
+		PORTA = 0x00;
+		delay();
+    }
+}
