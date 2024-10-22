@@ -144,5 +144,12 @@ This C code is designed for an AVR microcontroller to handle serial communicatio
 - `main()` continuously reads data from Port A and sends it over UART0 after assembling it using `shiftByte()`.
 - The code includes commented-out sections (`syncHeaderPortC()` and `transmit()` calls) indicating potential functionality not currently active in the main loop.
 
+  <div align="center">
+  <a href="https://maazsalman.org/">
+    <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="gh" />
+  </a>
+  <p> Explore More! 🚀</p>
+</div>
+
 
 
